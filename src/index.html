@@ -482,15 +482,17 @@
           name="contact"
           method="POST"
           data-netlify="true"
+          action="/?success=true"
+          netlify-honeypot="bot-field"
           class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-8 shadow-2xl"
           data-aos="fade-up"
-          netlify-honeypot="bot-field"
         >
           <p class="hidden">
-            <label
-              >Don't fill this out if you're human: <input name="bot-field"
-            /></label>
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
           </p>
+          <input type="hidden" name="form-name" value="contact" />
           <div class="mb-6">
             <label class="block text-lg mb-2" for="name">Name</label>
             <input

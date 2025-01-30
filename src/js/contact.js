@@ -1,52 +1,41 @@
 // Function to create and show notification
 function showNotification(message, type = 'success') {
-    const container = document.getElementById('notification-container');
     const notification = document.createElement('div');
+    notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out ${
+        type === 'success' ? 'bg-green-500' : 'bg-red-500'
+    } text-white max-w-md z-50`;
     
-    // Set notification styles based on type
-    const baseClasses = 'flex items-center p-4 rounded-lg shadow-lg transform transition-all duration-500 max-w-md';
-    const typeClasses = {
-        success: 'bg-gradient-to-r from-green-500 to-green-600 text-white',
-        error: 'bg-gradient-to-r from-red-500 to-red-600 text-white',
-        info: 'bg-gradient-to-r from-blue-500 to-blue-600 text-white'
-    };
-    
-    // Create notification content
-    notification.className = `${baseClasses} ${typeClasses[type]} translate-x-full`;
     notification.innerHTML = `
-        <div class="flex-1">
-            ${message}
+        <div class="flex items-center">
+            <div class="flex-shrink-0">
+                ${type === 'success' 
+                    ? '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>'
+                    : '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>'
+                }
+            </div>
+            <div class="ml-3">
+                <p class="text-sm font-medium">${message}</p>
+            </div>
+            ${type === 'success' ? `
+                <div class="ml-4">
+                    <a href="/" class="text-white underline hover:text-gray-100">Back to Home</a>
+                </div>
+            ` : ''}
         </div>
-        <button class="ml-4 hover:opacity-75 transition-opacity" onclick="this.parentElement.remove()">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
     `;
     
-    // Add to container
-    container.appendChild(notification);
+    document.body.appendChild(notification);
     
-    // Trigger entrance animation
-    requestAnimationFrame(() => {
-        notification.classList.remove('translate-x-full');
-        notification.classList.add('translate-x-0');
-    });
-    
-    // Add hover effect
-    notification.addEventListener('mouseenter', () => {
-        notification.classList.add('scale-105');
-    });
-    
-    notification.addEventListener('mouseleave', () => {
-        notification.classList.remove('scale-105');
-    });
-    
-    // Auto remove after delay
+    // Animate in
     setTimeout(() => {
-        notification.classList.add('translate-x-full', 'opacity-0');
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+
+    // Remove after 5 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
         setTimeout(() => {
-            notification.remove();
+            document.body.removeChild(notification);
         }, 500);
     }, 5000);
 }
@@ -60,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     form.addEventListener('submit', function(event) {
-        // Netlify will handle the form submission
         const submitButton = this.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.innerHTML;
         
@@ -74,16 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
             Sending...
         `;
 
-        // Show success notification after a short delay (simulating form submission)
-        setTimeout(() => {
+        // Let Netlify handle the form submission
+        // The notification will show after the form redirects back
+        if (window.location.search.includes('success=true')) {
             showNotification('Thank you! Your message has been sent successfully. I\'ll get back to you soon.', 'success');
-            
-            // Reset button state
-            submitButton.disabled = false;
-            submitButton.innerHTML = originalButtonText;
-            
-            // Reset form
-            form.reset();
-        }, 2000);
+            // Clear the URL parameters
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
     });
 });
