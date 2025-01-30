@@ -8,7 +8,6 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/cli": "^4.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
