@@ -48,6 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    // Check if we're returning from a form submission
+    if (window.location.search.includes('form-submit=success')) {
+        showNotification('Thank you! Your message has been sent successfully. I\'ll get back to you soon.', 'success');
+        // Clear the URL parameters
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
         
