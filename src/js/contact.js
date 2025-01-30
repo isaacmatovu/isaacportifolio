@@ -3,7 +3,7 @@ function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out ${
         type === 'success' ? 'bg-green-500' : 'bg-red-500'
-    } text-white max-w-md z-50`;
+    } text-white max-w-md z-50 translate-x-full`;
     
     notification.innerHTML = `
         <div class="flex items-center">
@@ -18,7 +18,7 @@ function showNotification(message, type = 'success') {
             </div>
             ${type === 'success' ? `
                 <div class="ml-4">
-                    <a href="/" class="text-white underline hover:text-gray-100">Back to Home</a>
+                    <a href="#home" class="text-white underline hover:text-gray-100">Back to Top</a>
                 </div>
             ` : ''}
         </div>
@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
         const submitButton = this.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.innerHTML;
         
@@ -62,12 +64,28 @@ document.addEventListener('DOMContentLoaded', function() {
             Sending...
         `;
 
-        // Let Netlify handle the form submission
-        // The notification will show after the form redirects back
-        if (window.location.search.includes('success=true')) {
-            showNotification('Thank you! Your message has been sent successfully. I\'ll get back to you soon.', 'success');
-            // Clear the URL parameters
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
+        // Submit form data to Netlify
+        const formData = new FormData(form);
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(response => {
+            if (response.ok) {
+                showNotification('Thank you! Your message has been sent successfully. I\'ll get back to you soon.', 'success');
+                form.reset();
+            } else {
+                showNotification('There was a problem sending your message. Please try again.', 'error');
+            }
+        })
+        .catch(error => {
+            showNotification('There was a problem sending your message. Please try again.', 'error');
+        })
+        .finally(() => {
+            // Reset button state
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+        });
     });
 });
