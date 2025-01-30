@@ -56,8 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
-        
         const submitButton = this.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.innerHTML;
         
@@ -70,29 +68,5 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
             Sending...
         `;
-
-        // Submit form data to Netlify
-        const formData = new FormData(form);
-        fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-        })
-        .then(response => {
-            if (response.ok) {
-                showNotification('Thank you! Your message has been sent successfully. I\'ll get back to you soon.', 'success');
-                form.reset();
-            } else {
-                showNotification('There was a problem sending your message. Please try again.', 'error');
-            }
-        })
-        .catch(error => {
-            showNotification('There was a problem sending your message. Please try again.', 'error');
-        })
-        .finally(() => {
-            // Reset button state
-            submitButton.disabled = false;
-            submitButton.innerHTML = originalButtonText;
-        });
     });
 });
