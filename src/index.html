@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matovu Isaac Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .gradient-text {
+        background: linear-gradient(120deg, #6ee7b7, #3b82f6, #9333ea);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient 5s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .particle {
+        position: absolute;
+        pointer-events: none;
+        animation: particleFloat 1s ease-out forwards;
+      }
+
+      @keyframes particleFloat {
+        0% {
+          transform: translate(0, 0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translate(100px, -100px);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-gray-900 to-black text-white">
+    <!-- Particles Container -->
+    <div id="particles" class="fixed inset-0 pointer-events-none"></div>
+
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 bg-opacity-95 bg-gray-900 backdrop-filter backdrop-blur-lg shadow-lg transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="#" class="text-2xl font-bold gradient-text">John Doe</a>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              id="menu-toggle"
+              class="text-gray-300 hover:text-white focus:outline-none"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#about"
+              class="text-gray-300 hover:text-white transition-colors duration-300 transform hover:-translate-y-1"
+              >About</a
+            >
+            <a
+              href="#projects"
+              class="text-gray-300 hover:text-white transition-colors duration-300 transform hover:-translate-y-1"
+              >Projects</a
+            >
+            <a
+              href="#skills"
+              class="text-gray-300 hover:text-white transition-colors duration-300 transform hover:-translate-y-1"
+              >Skills</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-300 hover:text-white transition-colors duration-300 transform hover:-translate-y-1"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a
+            href="#about"
+            class="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-300"
+            >About</a
+          >
+          <a
+            href="#projects"
+            class="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-300"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-300"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-300"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] bg-cover bg-center opacity-10"
+      ></div>
+      <div class="text-center z-10 px-4" data-aos="fade-up">
+        <h1 class="text-6xl md:text-7xl font-bold mb-6 gradient-text">
+          Matovu Isaac
+        </h1>
+        <p class="text-2xl md:text-3xl text-gray-300 mb-12">
+          Front-end Developer | Tech Enthusiast
+        </p>
+        <a
+          href="#projects"
+          class="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-lg font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
+        >
+          View My Work
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+      <div
+        class="max-w-6xl mx-auto bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl shadow-2xl"
+      >
+        <div class="p-8">
+          <h2
+            class="text-4xl font-bold text-center mb-12 gradient-text"
+            data-aos="fade-up"
+          >
+            About Me
+          </h2>
+          <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/3" data-aos="fade-right">
+              <img
+                src="./images/isaac-2.jpeg"
+                alt="Profile"
+                class="rounded-full w-64 h-64 mx-auto object-cover floating shadow-2xl"
+              />
+            </div>
+            <div class="w-full md:w-2/3 space-y-6" data-aos="fade-left">
+              <p class="text-lg text-gray-300 leading-relaxed">
+                I'm a passionate front-end developer with expertise in building
+                scalable web applications. I love working with modern
+                technologies and creating impactful solutions.
+              </p>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                When I'm not coding, you can find me exploring new technologies,
+                contributing to open-source projects, or enjoying a good cup of
+                coffee. Let's build something amazing together!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-gray-900">
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-4xl font-bold text-center mb-12 gradient-text"
+          data-aos="fade-up"
+        >
+          Projects
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Cards -->
+          <div
+            class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
+            data-aos="fade-up"
+          >
+            <picture>
+              <source
+                srcset="./images/optimized/ecommerce.webp"
+                type="image/webp"
+              />
+              <img
+                src="./images/ecommerce.jpg"
+                alt="E-commerce Project"
+                class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3">
+                E-commernce shopping web app
+              </h3>
+              <p class="text-gray-300 mb-4">
+                A modern e-commerce platform built with React.
+              </p>
+              <a
+                href="https://lovely-cactus-30f981.netlify.app/"
+                class="text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                >Learn More →</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
+            data-aos="fade-up"
+          >
+            <picture>
+              <source
+                srcset="./images/optimized/task-tracker.webp"
+                type="image/webp"
+              />
+              <img
+                src="./images/task-tracker.jpg"
+                alt="Task Tracker Project"
+                class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3">Task tracking web app</h3>
+              <p class="text-gray-300 mb-4">
+                A modern task tracking platform built with React.
+              </p>
+              <a
+                href="https://phenomenal-youtiao-abc1d9.netlify.app/"
+                class="text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                >Learn More →</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
+            data-aos="fade-up"
+          >
+            <picture>
+              <source
+                srcset="./images/optimized/weather-app.webp"
+                type="image/webp"
+              />
+              <img
+                src="./images/weather-app.jpg"
+                alt="Weather App Project"
+                class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3">Weather app</h3>
+              <p class="text-gray-300 mb-4">
+                A modern weather forecasting platform built with Javascript.
+              </p>
+              <a
+                href="https://isaacmatovu.github.io/weatherapp/"
+                class="text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                >Learn More →</a
+              >
+            </div>
+          </div>
+          <!-- Add more project cards similarly -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-4xl font-bold text-center mb-12 gradient-text"
+          data-aos="fade-up"
+        >
+          Skills
+        </h2>
+
+        <!-- Frontend Skills -->
+        <div class="mb-12">
+          <h3
+            class="text-2xl font-semibold mb-6 text-center text-blue-400"
+            data-aos="fade-up"
+          >
+            Frontend Development
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-react text-4xl mb-4 text-blue-400"></i>
+              <p class="text-xl font-semibold">React</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-js text-4xl mb-4 text-yellow-400"></i>
+              <p class="text-xl font-semibold">Javascript</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-css3-alt text-4xl mb-4 text-blue-500"></i>
+              <p class="text-xl font-semibold">CSS3</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-html5 text-4xl mb-4 text-orange-500"></i>
+              <p class="text-xl font-semibold">HTML5</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <svg
+                class="w-12 h-12 mx-auto mb-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="text-teal-400"
+              >
+                <path
+                  d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"
+                />
+              </svg>
+              <p class="text-xl font-semibold">Tailwind CSS</p>
+            </div>
+
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i
+                class="fa-solid fa-mobile-screen text-4xl mb-4 text-purple-500"
+              ></i>
+              <p class="text-xl font-semibold">Responsive Design</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-solid fa-code text-4xl mb-4 text-green-500"></i>
+              <p class="text-xl font-semibold">Clean Code</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Development Tools -->
+        <div>
+          <h3
+            class="text-2xl font-semibold mb-6 text-center text-blue-400"
+            data-aos="fade-up"
+          >
+            Development Tools
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-git-alt text-4xl mb-4 text-red-500"></i>
+              <p class="text-xl font-semibold">Git</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-github text-4xl mb-4 text-gray-300"></i>
+              <p class="text-xl font-semibold">GitHub</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-solid fa-terminal text-4xl mb-4 text-green-400"></i>
+              <p class="text-xl font-semibold">Command Line</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i
+                class="fa-solid fa-code-branch text-4xl mb-4 text-blue-500"
+              ></i>
+              <p class="text-xl font-semibold">Version Control</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gray-900">
+      <div class="max-w-4xl mx-auto">
+        <h2
+          class="text-4xl font-bold text-center mb-12 gradient-text"
+          data-aos="fade-up"
+        >
+          Contact Me
+        </h2>
+        <form
+          id="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-8 shadow-2xl"
+          data-aos="fade-up"
+          netlify-honeypot="bot-field"
+        >
+          <p class="hidden">
+            <label
+              >Don't fill this out if you're human: <input name="bot-field"
+            /></label>
+          </p>
+          <div class="mb-6">
+            <label class="block text-lg mb-2" for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="mb-6">
+            <label class="block text-lg mb-2" for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+              placeholder="Your Email"
+            />
+          </div>
+          <div class="mb-6">
+            <label class="block text-lg mb-2" for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="4"
+              class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+              placeholder="Your Message"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg transform hover:scale-105 transition-all duration-300"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Notification element -->
+    <div
+      id="notification"
+      class="fixed top-4 right-4 p-4 rounded-lg bg-green-500 text-white shadow-lg transform transition-transform duration-300 -translate-y-full z-50"
+    ></div>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-gray-800">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="flex justify-center space-x-8 mb-6">
+          <a
+            href="https://github.com/isaacmatovu"
+            class="text-gray-400 hover:text-white transform hover:-translate-y-1 transition-all duration-300"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/matovu-isaac/"
+            class="text-gray-400 hover:text-white transform hover:-translate-y-1 transition-all duration-300"
+            >LinkedIn</a
+          >
+        </div>
+        <p class="text-gray-400">
+          &copy; 2024 Matovu Isaac. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        mirror: true,
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Particle effect
+      function createParticle(e) {
+        const particles = document.getElementById("particles");
+        const particle = document.createElement("div");
+
+        particle.className = "particle";
+        particle.style.width = "2px";
+        particle.style.height = "2px";
+        particle.style.background = "rgba(255, 255, 255, 0.5)";
+        particle.style.borderRadius = "50%";
+        particle.style.left = e.clientX + "px";
+        particle.style.top = e.clientY + "px";
+
+        particles.appendChild(particle);
+
+        setTimeout(() => particle.remove(), 1000);
+      }
+
+      document.addEventListener("mousemove", (e) => {
+        if (Math.random() < 0.1) {
+          createParticle(e);
+        }
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+    <script src="./js/contact.js"></script>
+  </body>
+</html>
