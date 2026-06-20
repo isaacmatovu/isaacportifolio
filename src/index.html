@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -28,7 +27,6 @@
       body {
         font-family: "Poppins", sans-serif;
       }
-
       .gradient-text {
         background: linear-gradient(120deg, #6ee7b7, #3b82f6, #9333ea);
         background-size: 200% 200%;
@@ -36,15 +34,14 @@
         -webkit-text-fill-color: transparent;
         animation: gradient 5s ease infinite;
       }
-      .pen{
-        width: 20ch;
+      .pen {
+        width: 22ch;
         text-wrap: nowrap;
         overflow: hidden;
-        animation:typing 5s steps(70) infinite alternate-reverse;
+        animation: typing 5s steps(70) infinite alternate-reverse;
       }
-
-      @keyframes typing{
-        from{
+      @keyframes typing {
+        from {
           width: 0ch;
         }
       }
@@ -59,11 +56,9 @@
           background-position: 0% 50%;
         }
       }
-
       .floating {
         animation: floating 3s ease-in-out infinite;
       }
-
       @keyframes floating {
         0% {
           transform: translateY(0px);
@@ -75,13 +70,11 @@
           transform: translateY(0px);
         }
       }
-
       .particle {
         position: absolute;
         pointer-events: none;
         animation: particleFloat 1s ease-out forwards;
       }
-
       @keyframes particleFloat {
         0% {
           transform: translate(0, 0);
@@ -98,7 +91,6 @@
     </style>
   </head>
   <body class="bg-gradient-to-br from-gray-900 to-black text-white">
-    <!-- Particles Container -->
     <div id="particles" class="fixed inset-0 pointer-events-none"></div>
 
     <!-- Navbar -->
@@ -108,8 +100,6 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <a href="#" class="text-2xl font-bold gradient-text">MI</a>
-
-          <!-- Mobile menu button -->
           <div class="md:hidden">
             <button
               id="menu-toggle"
@@ -130,8 +120,6 @@
               </svg>
             </button>
           </div>
-
-          <!-- Desktop Navigation -->
           <div class="hidden md:flex space-x-8">
             <a
               href="#about"
@@ -156,8 +144,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Mobile Navigation -->
       <div
         id="mobile-menu"
         class="hidden md:hidden bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg"
@@ -191,18 +177,14 @@
     <section
       class="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      <div
-        class="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] bg-cover bg-center opacity-10"
-      ></div>
+      <div class="absolute inset-0 bg-cover bg-center opacity-10"></div>
       <div class="text-center z-10 px-4" data-aos="fade-up">
         <h1 class="text-6xl md:text-7xl font-bold mb-6 gradient-text">
           Matovu Isaac
         </h1>
-        
         <p class="pen text-2xl md:text-3xl text-gray-300 mb-12">
-          Full stack developer 
+          Fullstack Developer
         </p>
-        
         <a
           href="#projects"
           class="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-lg font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
@@ -234,9 +216,10 @@
             </div>
             <div class="w-full md:w-2/3 space-y-6" data-aos="fade-left">
               <p class="text-lg text-gray-300 leading-relaxed">
-                I'm a passionate front-end developer with expertise in building
-                scalable web applications. I love working with modern
-                technologies and creating impactful solutions.
+                I'm a passionate Fullstack Developer with 3 years building
+                production-grade web and mobile applications. I lead SUDS Tech
+                Company Ltd — a software innovation lab delivering secure,
+                scalable digital systems for startups and enterprises.
               </p>
               <p class="text-lg text-gray-300 leading-relaxed">
                 When I'm not coding, you can find me exploring new technologies,
@@ -259,7 +242,6 @@
           Projects
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project Cards -->
           <div
             class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
             data-aos="fade-up"
@@ -279,10 +261,11 @@
             </picture>
             <div class="p-6">
               <h3 class="text-2xl font-bold mb-3">
-                E-commernce shopping web app
+                E-commerce Shopping Web App
               </h3>
               <p class="text-gray-300 mb-4">
-                A modern fullstack e-commerce platform built with React and firebase.
+                A modern fullstack e-commerce platform built with React and
+                Firebase.
               </p>
               <a
                 href="https://fir-gula-92427.web.app/"
@@ -303,8 +286,7 @@
               />
               <img
                 src="./images/task-tracker.jpg"
-                alt="Task Tracker Project"
-                target="_blank"
+                alt="Business Website"
                 class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                 loading="lazy"
                 decoding="async"
@@ -313,7 +295,7 @@
             <div class="p-6">
               <h3 class="text-2xl font-bold mb-3">Business Website</h3>
               <p class="text-gray-300 mb-4">
-                A modern website for a business built with Next.js
+                A modern website for a business built with Next.js.
               </p>
               <a
                 href="https://www.suds-tech.com/"
@@ -323,27 +305,23 @@
               >
             </div>
           </div>
-        
-         
-  <div
+          <div
             class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
             data-aos="fade-up"
           >
-          
-          
-           <video
-             src="./video/video.mp4"
-              class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-            controls
-            preload="metadata"
->
-  Your browser does not support the video tag.
-</video>
-            
+            <video
+              src="./video/video.mp4"
+              class="w-full h-48 object-cover"
+              controls
+              preload="metadata"
+            >
+              Your browser does not support the video tag.
+            </video>
             <div class="p-6">
               <h3 class="text-2xl font-bold mb-3">Food Ordering App</h3>
               <p class="text-gray-300 mb-4">
-                A modern cross platform application built with react native and appwrite
+                A modern cross-platform application built with React Native and
+                Appwrite.
               </p>
               <a
                 href="https://github.com/isaacmatovu/foodapp"
@@ -352,29 +330,24 @@
               >
             </div>
           </div>
-             <div
+          <div
             class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
             data-aos="fade-up"
           >
             <picture>
-              <source
-                srcset="./images/optimized/shop.webp"
-                type="image/webp"
-              />
+              <source srcset="./images/optimized/shop.webp" type="image/webp" />
               <img
                 src="./images/optimized/shop.webp"
-                alt="E-commerce Project"
+                alt="E-commerce Shopping Cart"
                 class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                 loading="lazy"
                 decoding="async"
               />
             </picture>
             <div class="p-6">
-              <h3 class="text-2xl font-bold mb-3">
-                E-commernce shopping web app
-              </h3>
+              <h3 class="text-2xl font-bold mb-3">E-commerce Shopping Cart</h3>
               <p class="text-gray-300 mb-4">
-                A modern e-commerce shoppingcart built with React.
+                A modern e-commerce shopping cart built with React.
               </p>
               <a
                 href="https://lovely-cactus-30f981.netlify.app/"
@@ -384,182 +357,291 @@
               >
             </div>
           </div>
-          <div
-          <!-- Add more project cards similarly -->
         </div>
       </div>
     </section>
 
     <!-- Skills Section -->
-   <section id="skills" class="py-20 px-4">
-  <div class="max-w-6xl mx-auto">
-    <h2
-      class="text-4xl font-bold text-center mb-12 gradient-text"
-      data-aos="fade-up"
-    >
-      Skills
-    </h2>
+    <section id="skills" class="py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-4xl font-bold text-center mb-12 gradient-text"
+          data-aos="fade-up"
+        >
+          Skills
+        </h2>
 
-    <!-- Frontend Skills -->
-    <div class="mb-12">
-      <h3
-        class="text-2xl font-semibold mb-6 text-center text-blue-400"
-        data-aos="fade-up"
-      >
-        Frontend Development
-      </h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i class="fa-brands fa-react text-4xl mb-4 text-blue-400"></i>
-          <p class="text-xl font-semibold">React</p>
-        </div>
-        <!-- Added React Native Skill with dedicated icon -->
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reactnative/reactnative-original.svg"
-            alt="React Native"
-            class="w-12 h-12 mx-auto mb-4"
-          />
-          <p class="text-xl font-semibold">React Native</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i class="fa-brands fa-js text-4xl mb-4 text-yellow-400"></i>
-          <p class="text-xl font-semibold">Javascript</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i class="fa-brands fa-css3-alt text-4xl mb-4 text-blue-500"></i>
-          <p class="text-xl font-semibold">CSS3</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i class="fa-brands fa-html5 text-4xl mb-4 text-orange-500"></i>
-          <p class="text-xl font-semibold">HTML5</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <svg
-            class="w-12 h-12 mx-auto mb-4"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="text-teal-400"
+        <!-- Frontend Skills -->
+        <div class="mb-12">
+          <h3
+            class="text-2xl font-semibold mb-6 text-center text-blue-400"
+            data-aos="fade-up"
           >
-            <path
-              d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"
-            />
-          </svg>
-          <p class="text-xl font-semibold">Tailwind CSS</p>
+            Frontend Development
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-react text-4xl mb-4 text-blue-400"></i>
+              <p class="text-xl font-semibold">React</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reactnative/reactnative-original.svg"
+                alt="React Native"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="text-xl font-semibold">React Native</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="TypeScript"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="text-xl font-semibold">TypeScript</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-js text-4xl mb-4 text-yellow-400"></i>
+              <p class="text-xl font-semibold">JavaScript</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                alt="Next.js"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="text-xl font-semibold">Next.js</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <!-- Vite icon -->
+              <svg
+                class="w-12 h-12 mx-auto mb-4"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M29.884 6.146l-13.142 23.5a.714.714 0 01-1.244.005L2.096 6.148a.714.714 0 01.746-1.057l13.156 2.352a.714.714 0 00.253 0l12.881-2.348a.714.714 0 01.752 1.051z"
+                  fill="#41D1FF"
+                />
+                <path
+                  d="M22.264 2.007L12.54 3.912a.357.357 0 00-.288.33l-.598 10.104a.357.357 0 00.437.369l2.707-.617a.357.357 0 01.43.42l-.804 3.939a.357.357 0 00.454.413l1.672-.508a.357.357 0 01.454.414l-1.279 6.187c-.08.387.435.6.65.267l.143-.22 7.925-15.815a.357.357 0 00-.387-.508l-2.787.537a.357.357 0 01-.41-.45l1.818-6.306a.357.357 0 00-.374-.46z"
+                  fill="#FF3E00"
+                />
+              </svg>
+              <p class="text-xl font-semibold">Vite</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <!-- Tailwind icon -->
+              <svg
+                class="w-12 h-12 mx-auto mb-4"
+                viewBox="0 0 24 24"
+                fill="#38BDF8"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624C10.337,13.382,8.976,12,6.001,12z"
+                />
+              </svg>
+              <p class="text-xl font-semibold">Tailwind CSS</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-html5 text-4xl mb-4 text-orange-500"></i>
+              <p class="text-xl font-semibold">HTML5</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-css3-alt text-4xl mb-4 text-blue-500"></i>
+              <p class="text-xl font-semibold">CSS3</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i
+                class="fa-solid fa-mobile-screen text-4xl mb-4 text-purple-500"
+              ></i>
+              <p class="text-xl font-semibold">Responsive Design</p>
+            </div>
+          </div>
         </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-            alt="TypeScript"
-            class="w-12 h-12 mx-auto mb-4"
-          />
-          <p class="text-xl font-semibold">TypeScript</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-            alt="Next.js"
-            class="w-12 h-12 mx-auto mb-4"
-          />
-          <p class="text-xl font-semibold">Next.js</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i
-            class="fa-solid fa-mobile-screen text-4xl mb-4 text-purple-500"
-          ></i>
-          <p class="text-xl font-semibold">Responsive Design</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i class="fa-solid fa-code text-4xl mb-4 text-green-500"></i>
-          <p class="text-xl font-semibold">Clean Code</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Development Tools -->
-    <div>
-      <h3
-        class="text-2xl font-semibold mb-6 text-center text-blue-400"
-        data-aos="fade-up"
-      >
-        Development Tools
-      </h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i class="fa-brands fa-git-alt text-4xl mb-4 text-red-500"></i>
-          <p class="text-xl font-semibold">Git</p>
+        <!-- Backend & Data Skills -->
+        <div class="mb-12">
+          <h3
+            class="text-2xl font-semibold mb-6 text-center text-green-400"
+            data-aos="fade-up"
+          >
+            Backend & Data
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+                alt="Golang"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="text-xl font-semibold">Golang</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                alt="PostgreSQL"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="text-xl font-semibold">PostgreSQL</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                alt="Firebase"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="text-xl font-semibold">Firebase</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <!-- Appwrite icon -->
+              <svg
+                class="w-12 h-12 mx-auto mb-4"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="256" height="256" rx="60" fill="#FD366E" />
+                <path
+                  d="M128 52C86.4 52 52 86.4 52 128s34.4 76 76 76 76-34.4 76-76S169.6 52 128 52zm0 120c-24.3 0-44-19.7-44-44s19.7-44 44-44 44 19.7 44 44-19.7 44-44 44z"
+                  fill="white"
+                />
+              </svg>
+              <p class="text-xl font-semibold">Appwrite</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-solid fa-server text-4xl mb-4 text-green-400"></i>
+              <p class="text-xl font-semibold">RESTful APIs</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-solid fa-database text-4xl mb-4 text-yellow-400"></i>
+              <p class="text-xl font-semibold">TanStack Query</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i
+                class="fa-solid fa-layer-group text-4xl mb-4 text-purple-400"
+              ></i>
+              <p class="text-xl font-semibold">Zustand</p>
+            </div>
+          </div>
         </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i class="fa-brands fa-github text-4xl mb-4 text-gray-300"></i>
-          <p class="text-xl font-semibold">GitHub</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i class="fa-solid fa-terminal text-4xl mb-4 text-green-400"></i>
-          <p class="text-xl font-semibold">Command Line</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <i
-            class="fa-solid fa-code-branch text-4xl mb-4 text-blue-500"
-          ></i>
-          <p class="text-xl font-semibold">Version Control</p>
-        </div>
-        <div
-          class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
-          data-aos="fade-up"
-        >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-            alt="Firebase"
-            class="w-12 h-12 mx-auto mb-4"
-          />
-          <p class="text-xl font-semibold">Firebase</p>
+
+        <!-- Development Tools -->
+        <div>
+          <h3
+            class="text-2xl font-semibold mb-6 text-center text-blue-400"
+            data-aos="fade-up"
+          >
+            Development Tools & Process
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-git-alt text-4xl mb-4 text-red-500"></i>
+              <p class="text-xl font-semibold">Git</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-brands fa-github text-4xl mb-4 text-gray-300"></i>
+              <p class="text-xl font-semibold">GitHub</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-solid fa-terminal text-4xl mb-4 text-green-400"></i>
+              <p class="text-xl font-semibold">Command Line</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-solid fa-vial text-4xl mb-4 text-pink-400"></i>
+              <p class="text-xl font-semibold">Unit Testing</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i
+                class="fa-solid fa-arrows-spin text-4xl mb-4 text-blue-400"
+              ></i>
+              <p class="text-xl font-semibold">Agile</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-solid fa-robot text-4xl mb-4 text-teal-400"></i>
+              <p class="text-xl font-semibold">AI-assisted Dev</p>
+            </div>
+            <div
+              class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl text-center"
+              data-aos="fade-up"
+            >
+              <i class="fa-solid fa-code text-4xl mb-4 text-green-500"></i>
+              <p class="text-xl font-semibold">Code Review</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-4 bg-gray-900">
@@ -583,9 +665,9 @@
         >
           <input type="hidden" name="form-name" value="contact" />
           <p class="hidden">
-            <label>
-              Don't fill this out if you're human: <input name="bot-field" />
-            </label>
+            <label
+              >Don't fill this out if you're human: <input name="bot-field"
+            /></label>
           </p>
           <div class="mb-6">
             <label class="block text-lg mb-2" for="name">Name</label>
@@ -630,7 +712,6 @@
       </div>
     </section>
 
-    <!-- Notification element -->
     <div
       id="notification"
       class="fixed top-4 right-4 p-4 rounded-lg bg-green-500 text-white shadow-lg transform transition-transform duration-300 -translate-y-full z-50"
@@ -657,29 +738,17 @@
       </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-      // Initialize AOS
-      AOS.init({
-        duration: 1000,
-        once: true,
-        mirror: true,
-      });
-
-      // Mobile menu toggle
+      AOS.init({ duration: 1000, once: true, mirror: true });
       const menuToggle = document.getElementById("menu-toggle");
       const mobileMenu = document.getElementById("mobile-menu");
-
       menuToggle.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
       });
-
-      // Particle effect
       function createParticle(e) {
         const particles = document.getElementById("particles");
         const particle = document.createElement("div");
-
         particle.className = "particle";
         particle.style.width = "2px";
         particle.style.height = "2px";
@@ -687,25 +756,20 @@
         particle.style.borderRadius = "50%";
         particle.style.left = e.clientX + "px";
         particle.style.top = e.clientY + "px";
-
         particles.appendChild(particle);
-
         setTimeout(() => particle.remove(), 1000);
       }
-
       document.addEventListener("mousemove", (e) => {
         if (Math.random() < 0.1) {
           createParticle(e);
         }
       });
-
-      // Smooth scroll
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
+          document
+            .querySelector(this.getAttribute("href"))
+            .scrollIntoView({ behavior: "smooth" });
         });
       });
     </script>
